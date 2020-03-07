@@ -11,10 +11,43 @@
         android:id="@+id/message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MainFragment"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="212dp"
+        android:layout_marginBottom="200dp"
+        android:text="@string/msgMain_String"
+        app:layout_constraintBottom_toTopOf="@+id/btnSearch"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnRadom"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginBottom="150dp"
+        android:text="@string/btnRandom_String"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSearch" />
+
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginBottom="40dp"
+        android:text="@string/btnSearch_String"
+        app:layout_constraintBottom_toTopOf="@+id/btnRadom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/message" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
