@@ -2,8 +2,8 @@ package com.restaurantroulette.dto
 
 import com.google.gson.annotations.SerializedName
 
-data class City(@SerializedName("cities") var name : String) {
+data class City(@SerializedName("cities") var CityName : String) {
     override fun toString(): String {
-        return name
+        return CityName
     }
 }
