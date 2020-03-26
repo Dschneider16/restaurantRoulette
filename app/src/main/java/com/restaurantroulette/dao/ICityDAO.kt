@@ -11,5 +11,5 @@ interface ICityDAO {
     fun getAllCities(): Call<ArrayList<City>>
 
     @GET("/api/cities")
-    fun getCities(@Query("City_Name") cityName : String) : Call<ArrayList<City>>
+    fun getCity(@Query("City_Name") cityName : String) : Call<ArrayList<City>>
 }
