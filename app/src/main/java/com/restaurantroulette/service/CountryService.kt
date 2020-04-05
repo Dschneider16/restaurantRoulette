@@ -21,8 +21,7 @@ class CountryService {
              * exception occurred creating the request or processing the response.
              */
             override fun onFailure(call: Call<ArrayList<Country>>, t: Throwable) {
-                val j = 1 + 1
-                val i = 1 + 1
+                print("Error at Retrofit thread enqueue in Country Service.")
             }
 
             /**
