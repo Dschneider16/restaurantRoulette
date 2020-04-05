@@ -30,8 +30,7 @@ class MainFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
 
         btnRandom.setOnClickListener{
-            viewModel.randomBool = !viewModel.randomBool
-            if (viewModel.randomBool) {
+            if (viewModel.getRandomBool()) {
                 //call search function
                 message.text = "Generating Random Search Results..."
             }
