@@ -2,7 +2,11 @@ package com.restaurantroulette
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Message
+import android.widget.Button
+import android.widget.TextView
 import com.restaurantroulette.ui.main.MainFragment
+import com.restaurantroulette.ui.main.SearchFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,4 +20,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun getResults(){
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container, SearchFragment.newInstance())
+            .commitNow()
+    }
 }
