@@ -34,6 +34,7 @@ class MainFragment : Fragment() {
             if (viewModel.randomBool) {
                 //call search function
                 message.text = "Generating Random Search Results..."
+
             }
             else {
                 //Insert logic for changing back to question prompt.

@@ -7,9 +7,11 @@ import android.view.GestureDetector
 import android.view.MotionEvent
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.view.GestureDetectorCompat
 import com.restaurantroulette.ui.main.MainFragment
 import com.restaurantroulette.ui.main.SearchFragment
+import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,6 +25,13 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.container, MainFragment.newInstance())
                 .commitNow()
+
+         /**   btnRandom.setOnClickListener(){
+                (activity as MainActivity).onSwipeRight()
+            }
+            btnSearch.setOnClickListener(){
+                (activity as MainActivity)
+            }**/
         }
         detector = GestureDetectorCompat (this, DiaryGestureListener())
     }
@@ -53,9 +62,9 @@ class MainActivity : AppCompatActivity() {
             velocityX: Float,
             velocityY: Float
         ): Boolean {
-            var diffx = moveEvent?.x?.minus(downEvent!!.x) ?: 0.0f
+            val diffx = moveEvent?.x?.minus(downEvent!!.x) ?: 0.0f
 
-            var diffy = moveEvent?.y?.minus(downEvent!!.y) ?: 0.0f
+            val diffy = moveEvent?.y?.minus(downEvent!!.y) ?: 0.0f
 
             return if (Math.abs(diffx) > Math.abs(diffy)){
                 //left or right swipe
@@ -97,23 +106,28 @@ class MainActivity : AppCompatActivity() {
             }
 
 
-            return super.onFling(downEvent, moveEvent, velocityX, velocityY)
+
         }
     }
 
     private fun onSwipeBottom() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Toast.makeText(this, "bottom Swipe", Toast.LENGTH_LONG ).show()
     }
 
     private fun onSwipeTop() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Toast.makeText(this, "top Swipe", Toast.LENGTH_LONG ).show()
     }
 
     private fun onSwipeLeft() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Toast.makeText(this, "left Swipe", Toast.LENGTH_LONG ).show()
     }
 
     private fun onSwipeRight() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.container, SearchFragment.newInstance())
+                .commitNow()
+
+
     }
 }
