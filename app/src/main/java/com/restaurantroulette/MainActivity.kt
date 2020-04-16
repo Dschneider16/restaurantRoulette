@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.GestureDetectorCompat
+import androidx.lifecycle.ViewModelProviders
 import com.restaurantroulette.ui.main.MainFragment
 import com.restaurantroulette.ui.main.SearchFragment
 import kotlinx.android.synthetic.main.main_fragment.*
@@ -26,15 +27,14 @@ class MainActivity : AppCompatActivity() {
                 .replace(R.id.container, MainFragment.newInstance())
                 .commitNow()
 
-         /**   btnRandom.setOnClickListener(){
-                (activity as MainActivity).onSwipeRight()
-            }
-            btnSearch.setOnClickListener(){
-                (activity as MainActivity)
-            }**/
+
         }
         detector = GestureDetectorCompat (this, DiaryGestureListener())
     }
+
+
+
+
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
        return if (detector.onTouchEvent(event)){
@@ -125,7 +125,7 @@ class MainActivity : AppCompatActivity() {
     private fun onSwipeRight() {
 
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, SearchFragment.newInstance())
+                .replace(R.id.container, ResultsFragment.newInstance())
                 .commitNow()
 
 
