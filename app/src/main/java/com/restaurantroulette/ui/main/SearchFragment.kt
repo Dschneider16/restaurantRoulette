@@ -27,7 +27,7 @@ class SearchFragment : Fragment(), OnMapReadyCallback {
     private lateinit var mView : View
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater, container : ViewGroup?,
         savedInstanceState: Bundle?
     ) : View {
         mView = inflater.inflate(R.layout.search_fragment, container, false)
