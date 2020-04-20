@@ -8,47 +8,47 @@
     tools:context=".ui.main.MainFragment">
 
     <TextView
-        android:id="@+id/message"
-        android:layout_width="wrap_content"
+        android:id="@+id/lblSearch"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="212dp"
-        android:layout_marginBottom="200dp"
-        android:text="@string/msgMain_String"
-        app:layout_constraintBottom_toTopOf="@+id/btnSearch"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/searchFor"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#732626"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnRandom"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="155dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="156dp"
-        android:layout_marginBottom="150dp"
-        android:text="@string/btnRandom_String"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <EditText
+        android:id="@+id/fieldCity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:autofillHints="cityName"
+        android:ems="10"
+        android:hint="@string/city"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSearch" />
+        app:layout_constraintTop_toBottomOf="@+id/lblSearch" />
 
-    <Button
-        android:id="@+id/btnSearch"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="155dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="156dp"
-        android:layout_marginBottom="40dp"
-        android:text="@string/btnSearch_String"
-        app:layout_constraintBottom_toTopOf="@+id/btnRandom"
+    <EditText
+        android:id="@+id/fieldState"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="@string/state"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/message" />
+        app:layout_constraintTop_toBottomOf="@+id/fieldCity" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
