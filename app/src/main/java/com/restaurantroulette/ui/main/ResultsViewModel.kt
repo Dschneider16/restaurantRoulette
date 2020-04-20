@@ -1,4 +1,4 @@
-package com.restaurantroulette
+package com.restaurantroulette.ui.main
 
 import androidx.lifecycle.ViewModel
 

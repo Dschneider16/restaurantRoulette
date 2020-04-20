@@ -21,7 +21,7 @@ class SearchFragment : Fragment(), OnMapReadyCallback {
         fun newInstance() = SearchFragment()
     }
 
-    private lateinit var viewModel: MainViewModel
+    private lateinit var viewModel : MainViewModel
     private lateinit var mGoogleMap : GoogleMap
     private lateinit var mMapView : MapView
     private lateinit var mView : View
@@ -29,12 +29,12 @@ class SearchFragment : Fragment(), OnMapReadyCallback {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ) : View {
         mView = inflater.inflate(R.layout.search_fragment, container, false)
         return mView
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
+    override fun onActivityCreated(savedInstanceState : Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
     }
@@ -49,7 +49,7 @@ class SearchFragment : Fragment(), OnMapReadyCallback {
         }
     }
 
-    override fun onMapReady(p0: GoogleMap?) {
+    override fun onMapReady(p0 : GoogleMap?) {
         MapsInitializer.initialize(context)
         mGoogleMap.mapType = GoogleMap.MAP_TYPE_NORMAL
 

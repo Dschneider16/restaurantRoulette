@@ -2,17 +2,13 @@ package com.restaurantroulette
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Message
 import android.view.GestureDetector
 import android.view.MotionEvent
-import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.GestureDetectorCompat
-import androidx.lifecycle.ViewModelProviders
 import com.restaurantroulette.ui.main.MainFragment
+import com.restaurantroulette.ui.main.ResultsFragment
 import com.restaurantroulette.ui.main.SearchFragment
-import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainActivity : AppCompatActivity() {
 
