@@ -4,6 +4,6 @@ import com.google.gson.annotations.SerializedName
 
 data class RestaurantDetails(@SerializedName("phone") var phoneNumber : String, @SerializedName("price") var priceRating : Int) {
     override fun toString(): String {
-        return phoneNumber
+        return "$phoneNumber, $priceRating"
     }
 }

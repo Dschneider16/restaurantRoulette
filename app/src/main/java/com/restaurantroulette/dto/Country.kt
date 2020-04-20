@@ -48,6 +48,6 @@ data class Country(@SerializedName("countries") var code : String, var name : St
     }
 
     override fun toString(): String {
-        return name
+        return "$code, $name"
     }
 }
