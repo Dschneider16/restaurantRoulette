@@ -86,8 +86,12 @@
         android:text="Go!"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="306dp" />
+        app:layout_constraintBottom_toTopOf="@+id/lblLetUs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fieldPostalCode"
+        app:layout_constraintVertical_bias="0.138" />
 
     <TextView
         android:id="@+id/lblLetUs"
@@ -116,7 +120,11 @@
         android:text="Random!"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
-        tools:layout_editor_absoluteX="130dp"
-        tools:layout_editor_absoluteY="531dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblLetUs"
+        app:layout_constraintVertical_bias="0.142" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

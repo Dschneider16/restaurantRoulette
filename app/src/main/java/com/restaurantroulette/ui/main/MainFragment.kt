@@ -43,7 +43,7 @@ class MainFragment : Fragment() {
         }
 
         btnSearchGo.setOnClickListener{
-            message.text = "Searching..."
+            //message.text = "Searching..."
             //open search fragment
             (activity as MainActivity).getResults()
         }
