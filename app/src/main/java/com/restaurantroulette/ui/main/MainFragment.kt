@@ -33,12 +33,12 @@ class MainFragment : Fragment() {
             viewModel.randomBool = !viewModel.randomBool
             if (viewModel.randomBool) {
                 //call search function
-                message.text = "Generating Random Search Results..."
+                //message.text = "Generating Random Search Results..."
 
             }
             else {
                 //Insert logic for changing back to question prompt.
-                message.text = "Random Searching Disabled, continue with the question prompt (CHANGE THIS)."
+                //message.text = "Random Searching Disabled, continue with the question prompt (CHANGE THIS)."
             }
         }
 
