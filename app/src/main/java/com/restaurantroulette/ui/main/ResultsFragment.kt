@@ -11,6 +11,7 @@ import com.restaurantroulette.R
 
 class ResultsFragment : Fragment() {
 
+
     companion object {
         fun newInstance() = ResultsFragment()
     }

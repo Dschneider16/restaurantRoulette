@@ -5,8 +5,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClientInstance {
     private var retrofit : Retrofit? = null
-    private val BASE_URL = "https://opentable.herokuapp.com"
-
+    private val BASE_URL : String = "https://maps.googleapis.com/maps/api/place/"
+    //?input=mongolian%20grill&inputtype=textquery&fields=photos,formatted_address,name,opening_hours,rating&locationbias=circle:2000@47.6918452,-122.2226413&key=YOUR_API_KEY
     val retrofitInstance : Retrofit?
         get() {
             // checks if this object has been created

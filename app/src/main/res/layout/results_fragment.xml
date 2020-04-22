@@ -7,15 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.ResultsFragment">
 
-    
 
     <com.google.android.gms.maps.MapView
         android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="5dp" />
-
+        tools:layout_editor_absoluteY="-16dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

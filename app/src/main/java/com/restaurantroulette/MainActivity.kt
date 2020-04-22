@@ -6,14 +6,30 @@ import android.view.GestureDetector
 import android.view.MotionEvent
 import android.widget.Toast
 import androidx.core.view.GestureDetectorCompat
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.gson.Gson
+import com.restaurantroulette.dao.ICityDAO
+import com.restaurantroulette.dao.iPlacesDAO
+import com.restaurantroulette.dto.Places
+import com.restaurantroulette.dto.PlacesRequest
+import com.restaurantroulette.service.PlaceService
 import com.restaurantroulette.ui.main.MainFragment
 import com.restaurantroulette.ui.main.ResultsFragment
 import com.restaurantroulette.ui.main.SearchFragment
+import kotlinx.android.synthetic.main.results_fragment.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.net.URL
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var detector: GestureDetectorCompat
-
+    private lateinit var googleMap: GoogleMap
+    var placeService: PlaceService = PlaceService()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,11 +57,20 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun getResults(){
+    fun getResults(city: String, state: String, postalCode: String){
         supportFragmentManager.beginTransaction()
-            .replace(R.id.container, SearchFragment.newInstance())
+            .replace(R.id.container, ResultsFragment.newInstance())
             .commitNow()
+        var input = "pizza" + " near " + postalCode
+        println(input)
+        var result = placeService.fetchPlace(input)
+
+        println(result)
+
+        //println(URL("https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=mongolian%20grill&inputtype=textquery&fields=photos,formatted_address,name,opening_hours,rating&locationbias=circle:2000@47.6918452,-122.2226413&key=AIzaSyDRWf-bSt6GMqPH5MWIpxF3EIDr9r_InRY").readText())
+        //set map coords
     }
+
     inner class DiaryGestureListener: GestureDetector.SimpleOnGestureListener(){
 
         private val SWIPE_THRESHOLD = 100

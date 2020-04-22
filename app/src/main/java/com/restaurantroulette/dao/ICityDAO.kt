@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface ICityDAO {
 
-    @GET("/api/cities")
+    @GET("/api/cities/")
     fun getAllCities(): Call<ArrayList<City>>
 
     @GET("/api/cities")
