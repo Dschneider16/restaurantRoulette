@@ -21,6 +21,8 @@ class ResultsFragment : Fragment() {
         fun newInstance() = ResultsFragment()
     }
 
+
+
     private lateinit var viewModel : ResultsViewModel
 
     lateinit var result: Places

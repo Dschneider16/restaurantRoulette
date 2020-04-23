@@ -11,13 +11,9 @@ import com.google.gson.Gson
 import com.google.gson.JsonObject
 import com.restaurantroulette.dao.iPlacesDAO
 import com.restaurantroulette.dto.Places
-import com.restaurantroulette.service.PlaceService
 import com.restaurantroulette.ui.main.MainFragment
 import com.restaurantroulette.ui.main.ResultsFragment
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.android.synthetic.main.main_fragment.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -26,10 +22,8 @@ import retrofit2.Response
 class MainActivity : AppCompatActivity() {
 
     private lateinit var detector: GestureDetectorCompat
-    private lateinit var googleMap: GoogleMap
-    var placeService: PlaceService = PlaceService()
-    var result: JsonObject? = null
     val mainFragment: MainFragment = MainFragment.newInstance()
+    var swipeDirectionReceived: SwipeDirection? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,13 +52,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun getResults(food: String, postalCode: String){
-        var input = food + " near " + postalCode
-        println(input)
 
         var resultsFragment: ResultsFragment = ResultsFragment.newInstance()
         var gson = Gson()
         //var response = placeService.fetchPlace(input)
-        var call: Call<JsonObject>? = RetrofitClientInstance.retrofitInstance?.create(iPlacesDAO::class.java)?.getPlacesResults(input, "textquery", "photos,formatted_address,name,opening_hours,rating", null, "AIzaSyDRWf-bSt6GMqPH5MWIpxF3EIDr9r_InRY")
+        var call: Call<JsonObject>? = RetrofitClientInstance.retrofitInstance?.create(iPlacesDAO::class.java)?.getPlacesResults("$food near $postalCode", "textquery", "photos,formatted_address,name,opening_hours,rating", null, "AIzaSyDRWf-bSt6GMqPH5MWIpxF3EIDr9r_InRY")
 
         println("Request: \n" + call)
         var _place = JsonObject()
@@ -106,6 +98,10 @@ class MainActivity : AppCompatActivity() {
 
         //println(URL("https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=mongolian%20grill&inputtype=textquery&fields=photos,formatted_address,name,opening_hours,rating&locationbias=circle:2000@47.6918452,-122.2226413&key=AIzaSyDRWf-bSt6GMqPH5MWIpxF3EIDr9r_InRY").readText())
         //set map coords
+    }
+
+    enum class SwipeDirection {
+        UP, DOWN, LEFT, RIGHT
     }
 
     fun returnHome(){
@@ -178,22 +174,30 @@ class MainActivity : AppCompatActivity() {
 
     private fun onSwipeBottom() {
         Toast.makeText(this, "bottom Swipe", Toast.LENGTH_LONG ).show()
+        swipeDirectionReceived = SwipeDirection.DOWN
+        println(swipeDirectionReceived)
     }
 
     private fun onSwipeTop() {
         Toast.makeText(this, "top Swipe", Toast.LENGTH_LONG ).show()
+        swipeDirectionReceived = SwipeDirection.UP
+        println(swipeDirectionReceived)
     }
 
     private fun onSwipeLeft() {
         Toast.makeText(this, "left Swipe", Toast.LENGTH_LONG ).show()
+        swipeDirectionReceived= SwipeDirection.LEFT
+        println(swipeDirectionReceived)
     }
 
     private fun onSwipeRight() {
+        swipeDirectionReceived = SwipeDirection.RIGHT
+        println(swipeDirectionReceived)
 
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.container, ResultsFragment.newInstance())
-                .commitNow()
-
+        /**getResults(
+            fieldFood.text.toString(),
+            fieldPostalCode.text.toString()
+        )**/
 
     }
 }
