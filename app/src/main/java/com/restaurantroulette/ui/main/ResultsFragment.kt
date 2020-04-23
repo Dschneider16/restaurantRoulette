@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.restaurantroulette.MainActivity
 import com.restaurantroulette.R
+import kotlinx.android.synthetic.main.results_fragment.*
 
 
 class ResultsFragment : Fragment() {
@@ -25,10 +27,19 @@ class ResultsFragment : Fragment() {
         return inflater.inflate(R.layout.results_fragment, container, false)
     }
 
+
+
+
     override fun onActivityCreated(savedInstanceState : Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(ResultsViewModel::class.java)
         // TODO: Use the ViewModel
+
+        btnBack.setOnClickListener {
+            (activity as MainActivity).returnHome()
+
+        }
+
     }
 
 }

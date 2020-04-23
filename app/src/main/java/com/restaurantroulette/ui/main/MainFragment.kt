@@ -47,7 +47,7 @@ class MainFragment : Fragment() {
             //open search fragment
             (activity as MainActivity).getResults(fieldCity.text.toString(), fieldState.text.toString(), fieldPostalCode.text.toString())
         }
-        // TODO: Use the ViewModel
+
     }
 
 }

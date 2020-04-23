@@ -7,23 +7,11 @@ import android.view.MotionEvent
 import android.widget.Toast
 import androidx.core.view.GestureDetectorCompat
 import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.gson.Gson
-import com.restaurantroulette.dao.ICityDAO
-import com.restaurantroulette.dao.iPlacesDAO
-import com.restaurantroulette.dto.Places
-import com.restaurantroulette.dto.PlacesRequest
+
 import com.restaurantroulette.service.PlaceService
 import com.restaurantroulette.ui.main.MainFragment
 import com.restaurantroulette.ui.main.ResultsFragment
-import com.restaurantroulette.ui.main.SearchFragment
-import kotlinx.android.synthetic.main.results_fragment.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import java.net.URL
-import java.util.*
-import kotlin.collections.ArrayList
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -69,6 +57,13 @@ class MainActivity : AppCompatActivity() {
 
         //println(URL("https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=mongolian%20grill&inputtype=textquery&fields=photos,formatted_address,name,opening_hours,rating&locationbias=circle:2000@47.6918452,-122.2226413&key=AIzaSyDRWf-bSt6GMqPH5MWIpxF3EIDr9r_InRY").readText())
         //set map coords
+    }
+    fun returnHome(){
+
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.container, MainFragment.newInstance())
+                .commitNow()
+
     }
 
     inner class DiaryGestureListener: GestureDetector.SimpleOnGestureListener(){

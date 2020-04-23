@@ -1,10 +1,8 @@
 package com.restaurantroulette.service
 
-import androidx.lifecycle.MutableLiveData
+
 import com.restaurantroulette.RetrofitClientInstance
-import com.restaurantroulette.dao.ICityDAO
 import com.restaurantroulette.dao.iPlacesDAO
-import com.restaurantroulette.dto.City
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
