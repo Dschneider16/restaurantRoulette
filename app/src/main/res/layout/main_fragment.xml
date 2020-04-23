@@ -20,16 +20,18 @@
         android:textColorHint="#FFFFFF"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/fieldCity"
+        android:id="@+id/fieldFood"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="72dp"
         android:layout_marginEnd="16dp"
-        android:autofillHints="cityName"
+        android:autofillHints="What are you in the mood for?"
         android:background="#FFFFFF"
         android:ems="10"
         android:fontFamily="sans-serif"
@@ -42,28 +44,11 @@
         app:layout_constraintTop_toBottomOf="@+id/lblSearch" />
 
     <EditText
-        android:id="@+id/fieldState"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
-        android:background="#FFFFFF"
-        android:ems="10"
-        android:hint="@string/state"
-        android:inputType="text"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fieldCity" />
-
-    <EditText
         android:id="@+id/fieldPostalCode"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="41dp"
         android:layout_marginEnd="16dp"
         android:background="#FFFFFF"
         android:ems="10"
@@ -74,7 +59,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fieldState" />
+        app:layout_constraintTop_toBottomOf="@+id/fieldFood" />
 
     <Button
         android:id="@+id/btnSearchGo"

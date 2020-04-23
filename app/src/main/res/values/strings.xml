@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Restaurant Roulette</string>
     <string name="searchFor">Search for a restaurant by...</string>
-    <string name="city">City</string>
+    <string name="city">What are you in the mood for?</string>
     <string name="state">State</string>
-    <string name="postalCode">Postal Code</string>
+    <string name="postalCode">What Zip you eating around?</string>
     <string name="labelRandom">Let us pick for you:</string>
 </resources>

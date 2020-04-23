@@ -4,5 +4,4 @@ import androidx.lifecycle.ViewModel
 
 class MainViewModel : ViewModel() {
     var randomBool : Boolean = false
-    // TODO: Implement the ViewModel
 }

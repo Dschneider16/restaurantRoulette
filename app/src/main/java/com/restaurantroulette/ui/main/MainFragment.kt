@@ -9,6 +9,11 @@ import android.view.ViewGroup
 import com.restaurantroulette.MainActivity
 import com.restaurantroulette.R
 import kotlinx.android.synthetic.main.main_fragment.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import okhttp3.Dispatcher
+import java.lang.Exception
 
 class MainFragment : Fragment() {
 
@@ -45,7 +50,14 @@ class MainFragment : Fragment() {
         btnSearchGo.setOnClickListener{
             //message.text = "Searching..."
             //open search fragment
-            (activity as MainActivity).getResults(fieldCity.text.toString(), fieldState.text.toString(), fieldPostalCode.text.toString())
+                    (activity as MainActivity).getResults(
+                        fieldFood.text.toString(),
+                        fieldPostalCode.text.toString()
+                    )
+
+
+
+
         }
 
     }
